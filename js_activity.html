@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+    <html>
+    <head>
+	<title>Javascript Activity</title>
+	<style type="text/css">
+		* {
+		    margin: 0;
+		    padding: 0;
+		    box-sizing: border-box;
+		    font-family: 'Montserrat', sans-serif;
+		}
+		body {
+		    min-height: 100vh;
+		    width: 100%;
+		    display: grid;
+		    grid-template-columns: 1fr;
+		    background: silver;
+		}
+		section {
+		    display: flex;
+		    justify-content: center;
+		    align-items: center;
+		}
+		.form-container {
+		    max-width: 450px;
+		    padding: 20px;
+		    display: flex;
+		    flex-direction: column;
+		    align-items: center;
+		}
+		.title {
+		    text-transform: uppercase;
+		    font-size: 2em;
+		    font-weight: bold;
+		    color: #000088;
+		    text-align: center;
+		    letter-spacing: 1px;
+		    margin-bottom: 20px;
+		}
+		p.title:hover {
+		    color: red;
+		}
+		.calculate-form {
+		    width: 100%;
+		    display: flex;
+		    flex-direction: column;
+		    padding: 3em;
+		    background: #e0e0e0;
+		    box-shadow:  8px 8px 16px #5a5a5a,
+		             -8px -8px 16px #ffffff;    
+		}
+		.form-control {
+		    width: 100%;
+		    position: relative;
+		    margin-bottom: 24px;
+		}
+		label {
+			margin-right: 10px;
+		}
+		input, button {
+		    border: none;
+		    outline: none;
+		    background: #fff;
+		    border-radius: 30px;
+		    font-size: 1em;
+		    color: #333;
+		}
+		input {
+		    width: 100%;
+		    padding: 10px;
+		    letter-spacing: 0.5px;
+		}
+		button.submit {
+		    color: #fff;
+		    padding: 9px 40px;
+		    width: 32px auto;
+		    text-transform: uppercase;
+		    letter-spacing: 2px;
+		    font-weight: bold;
+		    background: #00008b;
+		    cursor: pointer;    
+		}
+		button.submit:hover {
+		    opacity: 0.8;
+		}
+		button.submit:active {
+		    transform: scale(0.9);
+		}
+	</style>
+    <body>
+    <section class="main">
+    	<div class="form-container">
+    		<div class="calculate-form">
+		        <p class="title">Simple Interest Calculator</p>
+		        <div class="form-control">
+			        <label>Principal Amount:</label>
+			        <input type= "text" id="principal" placeholder="Enter principal amount" required>
+		        </div>
+		        <div class="form-control">
+			        <label>Interest Rate:</label>
+			        <input type= "text" id="time"placeholder="Enter interest rate" required>
+		        </div>
+		        <div class="form-control">
+			        <label>Number of Years:</label>
+			        <input type= "text" id="rate" placeholder="Enter the number of years" required>
+		        </div>
+
+		        <button class="submit" onclick="calculate()">Calculate</button><br>
+
+		        <div><p id="result" style="color: red;"></p></div>
+	        </div>
+	        
+        </div>
+    </section>
+    </body>
+        <script>
+            function calculate() {
+                principal = document.getElementById("principal").value;
+                rate = document.getElementById("rate").value;
+                time = document.getElementById("time").value;
+                result = document.getElementById("result");
+                
+                result.innerHTML = "The interest is " + (principal * rate * time) / 100;
+            }
+        </script>
+ </head>
+</html>
