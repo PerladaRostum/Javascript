@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Object</title>
+</head>
+<body>
+	<form id="userDataForm">
+		<label>Firstname:</label>
+		<input type="text" id="fname" required><br>
+
+		<label>Lastname:</label>
+		<input type="text" id="lname" required><br>
+
+		<label>Age:</label>
+		<input type="number" id="age" required><br>
+
+		<label>Gender</label>
+		<select id="gender" required>
+			<option value="Male">Male</option>
+			<option value="Female">Female</option>
+		</select><br>
+
+		<label>Birthdate:</label>
+		<input type="date" id="bdate" required><br>
+
+		<label>Address</label>
+		<input type="text" id="address" required><br>
+
+		<label>Email Address:</label>
+		<input type="email" id="EmailAdd" required><br>
+
+		<button type="button" onclick="displayUserData()">SUBMIT</button>
+	</form>
+    
+    <div id="userDataDisplay"></div>
+
+    <script type="text/javascript">
+    	 let userData = {};
+
+    	 function displayUserData() {
+    	 	userData.FIRSTNAME = document.getElementById('fname').value;
+    	 	userData.LASTNAME = document.getElementById('lname').value;
+    	 	userData.AGE = document.getElementById('age').value;
+    	 	userData.GENDER = document.getElementById('gender').value;
+    	 	userData.BIRTHDATE = document.getElementById('bdate').value;
+    	 	userData.ADDRESS = document.getElementById('address').value;
+    	 	userData.EMAIL_ADDRESS = document.getElementById('EmailAdd').value;
+
+    	 let display = `
+		    <p>First Name: ${userData.FIRSTNAME}</p>
+		    <p>Last Name: ${userData.LASTNAME}</p>
+		    <p>Age: ${userData.AGE}</p>
+		    <p>Gender: ${userData.GENDER}</p>
+		    <p>Birthdate: ${userData.BIRTHDATE}</p>
+		    <p>Address: ${userData.ADDRESS}</p>
+		    <p>Email Address:s ${userData.EMAIL_ADDRESS}</p>
+    	`;
+
+	    document.getElementById("userDataDisplay").innerHTML = display;
+    	 }
+    </script>
+</body>
+</html>
+
